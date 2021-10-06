@@ -1,0 +1,3 @@
+<!-- Setting the dreamer from android settings will redirect to MainActivity -->
+<dream xmlns:android="http://schemas.android.com/apk/res/android"
+    android:settingsActivity="com.penkov.screendreamer/.MainActivity" />
