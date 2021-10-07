@@ -83,20 +83,12 @@ public class DreamerView
     private void removeAlarmText ()
     {
         mAlarmTextView.setVisibility(View.INVISIBLE);
-        ConstraintLayout.LayoutParams params =
-                (ConstraintLayout.LayoutParams) mTimeTextView.getLayoutParams();
-        params.verticalBias = 0.5f;
-        mTimeTextView.setLayoutParams(params);
     }
 
     private void addAlarmText ()
     {
         mAlarmTextView.setVisibility(View.VISIBLE);
         mAlarmTextView.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_alarm, 0);
-        ConstraintLayout.LayoutParams params =
-                (ConstraintLayout.LayoutParams) mTimeTextView.getLayoutParams();
-        params.horizontalBias = 0.5f;
-        mTimeTextView.setLayoutParams(params);
     }
 
     private void setAlarm ()
