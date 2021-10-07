@@ -92,6 +92,7 @@ public class DreamerView
     private void addAlarmText ()
     {
         mAlarmTextView.setVisibility(View.VISIBLE);
+        mAlarmTextView.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_alarm, 0);
         ConstraintLayout.LayoutParams params =
                 (ConstraintLayout.LayoutParams) mTimeTextView.getLayoutParams();
         params.horizontalBias = 0.5f;

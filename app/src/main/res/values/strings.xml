@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Screen Dreamer</string>
     <string name="settings_title">Screen Dreamer Settings</string>
-    
+
     <string name="image_description">Charging Circle</string>
+    <string name="button_settings">SET</string>
 </resources>
