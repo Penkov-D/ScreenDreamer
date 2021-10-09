@@ -77,7 +77,7 @@ public class Dreamer extends DreamService implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        if (System.currentTimeMillis() - lastClick > 500) {
+        if (System.currentTimeMillis() - lastClick > 300) {
             lastClick = System.currentTimeMillis();
         } else {
             finish();
