@@ -6,8 +6,6 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
-import android.view.View;
-import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
         setTitle(R.string.settings_title);
 
-        ((Button) findViewById(R.id.button)).setOnClickListener(v -> {
+        findViewById(R.id.button).setOnClickListener(v -> {
             Intent intent;
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
                 intent = new Intent(Settings.ACTION_DREAM_SETTINGS);

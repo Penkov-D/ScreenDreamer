@@ -4,11 +4,12 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.service.dreams.DreamService;
+import android.view.MotionEvent;
 import android.view.View;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
 
-public class Dreamer extends DreamService {
+public class Dreamer extends DreamService implements View.OnClickListener {
 
     private DreamerView dreamerView;
 
@@ -17,7 +18,7 @@ public class Dreamer extends DreamService {
         super.onAttachedToWindow();
 
         // Wake up upon touch
-        setInteractive(false);
+        setInteractive(true);
         // Dim screen
         setScreenBright(true);
         // Set layout
@@ -30,7 +31,8 @@ public class Dreamer extends DreamService {
         // Hide system UI
         setFullscreen(true);
 
-        view.setSystemUiVisibility(3079);
+        view.setClickable(true);
+        view.setOnClickListener(this);
 
         int uiOptions = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
                 | View.SYSTEM_UI_FLAG_LOW_PROFILE
@@ -69,5 +71,16 @@ public class Dreamer extends DreamService {
     @Override
     public void onDetachedFromWindow() {
         super.onDetachedFromWindow();
+    }
+
+    private long lastClick = 0;
+
+    @Override
+    public void onClick(View v) {
+        if (System.currentTimeMillis() - lastClick > 500) {
+            lastClick = System.currentTimeMillis();
+        } else {
+            finish();
+        }
     }
 }
